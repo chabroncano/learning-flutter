@@ -65,6 +65,15 @@ It will work only if AA <= BB -2 and CC >= DD
 
 6. If after following all the steps above and you still can not run the flutter app, go to Device Settings > General > Device Management > Click the developer app you want to run > Click Trust to approve the development certificate
 
+---
+
+## Rules that we should keep in mind when developing
+
+1. As per Flutter team's recommendation, whenever you create a Widget which involves round brackets, add a comma after every one of it
+
+2. To make the code easier to read, always follow the indented structure `dartfmt`. In Android Studio, there is a *Reformat Code with dartfmt* shortcut by right clicking on the class
+
+3. Use `{}` instead of `=>` if method's name and body can't fit into one line
 
 ---
 
