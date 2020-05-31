@@ -32,13 +32,13 @@ When you create a new flutter app, make sure that your package name is unique
 
 There are several options to run your app
 
-#### Run your app via an emulator
+#### Run your app via emulator
 
-If you have Android Studio and XCode installed in your app, they pretty much provide everything including the simulators that you need, just a friendly this really requires disk space so make sure that you have enough
+If you have Android Studio and XCode installed in your app, they pretty much provide everything including the simulators that you need, just a friendly advice this really requires disk space so make sure that you have enough disk space
 
 #### Run your app on a physical Android device
 
-There is nothing much needed on this except for a good USB Cable, it should be capable to transfer data as well and not for charging only. Enable developer mode and USB debugging on your Android phone. There are different ways to do this depending on your phone's model but for most phones, you just need to click the Build Version multiple times in the About page on your phone's settings and you'll see the Developer options from there
+There is nothing much needed on this except for a good USB cable, it should be able to transfer data and not just for charging. Enable developer mode and USB debugging on your Android phone. There are different ways to do this depending on your phone's model but for most phones, you just need to click the Build Version multiple times in the About page on your phone's settings and you'll see the Developer options from there
 
 #### Run your app on a physical iOS device
 
