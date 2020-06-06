@@ -77,4 +77,8 @@ It will work only if AA <= BB -2 and CC >= DD
 
 ---
 
-Enjoy!
+## Understanding Stateless vs Stateful Widget
+
+The easiest explanation is that stateless can never change while stateful widgets can. Basically if your page wanted to show an image (See Commit ), then a Stateless widget is a good choice. However, if something is changing like a dice app (See Commit e75a1eacdece3a802ce480fc2a5a1d2c67062c09), then use the StatefulWidget.
+
+There's one more thing you have to know, if you want to rebuild the whole widget you need the `setState(() {})` method. See commit e75a1eacdece3a802ce480fc2a5a1d2c67062c09 for more info.
