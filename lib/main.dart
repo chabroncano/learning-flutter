@@ -1,20 +1,50 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
+  return runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.red,
         appBar: AppBar(
-          title: Text('Sample App'),
-          backgroundColor: Colors.blueGrey[900],
+          title: Text('Dicee'),
+          backgroundColor: Colors.red,
         ),
-        body: Center(
-          child: Image(
-            image: AssetImage('assets/images/diamond.png'),
-          ),
-        ),
+        body: DicePage(),
       ),
     ),
   );
+}
+
+class DicePage extends StatefulWidget {
+  @override
+  _DicePageState createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+  int leftDiceNumber = 1;
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: FlatButton(
+              onPressed: () {
+                setState(() {
+                  leftDiceNumber = 5;
+                });
+              },
+              child: Image.asset('assets/images/dice$leftDiceNumber.png'),
+            ),
+          ),
+          Expanded(
+            child: FlatButton(
+              onPressed: () {},
+              child: Image.asset('assets/images/dice1.png'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
