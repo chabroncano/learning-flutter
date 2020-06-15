@@ -82,3 +82,37 @@ It will work only if AA <= BB -2 and CC >= DD
 The easiest explanation is that stateless can never change while stateful widgets can. Basically if your page wanted to show an image (See Commit ), then a Stateless widget is a good choice. However, if something is changing like a dice app (See Commit e75a1eacdece3a802ce480fc2a5a1d2c67062c09), then use the StatefulWidget.
 
 There's one more thing you have to know, if you want to rebuild the whole widget you need the `setState(() {})` method. See commit e75a1eacdece3a802ce480fc2a5a1d2c67062c09 for more info.
+
+--
+
+## Functions
+
+Creating a function in Dart is almost similar as other languages. It goes like this:
+
+`void myFunction() { .. }`
+
+and with paramters:
+
+`void myFunction(String param) { .. }`
+
+However, you can also do this in dart:
+
+`void myFunction({String param1, String param2}) { .. }`
+
+and the curly braces make this function interesting. You can call this function in many ways:
+
+1. You can call it as normal: `myFunction('a', 'b')` where 'a' and 'b' are param1 and param2, respectively.
+
+2. You can call it with proper designation: `myFunction(param1: 'a', param2: 'b')` which makes it easier to read.
+
+3. You can also call it like this: `myFunction(param2: 'b', param1: 'a')`, actually. But why? Try not to. :)
+
+4. And lastly, it actually makes the parameters optional. I tried calling it as `myFunction(param1: 'a')` / `myFunction(param2: 'b')` and it still works.
+
+If you do item 4, make sure you handle nullables properly.
+
+## Objects
+
+Creating objects in dart still needs a constructor. I am not sure yet if there are other ways but this is the knowledge I've learned from the AppBrewery class so far. I will update this if ever I find something similar to Kotlin's data classes in Dart.
+
+Please refer to user.dart for an example object class in Dart.
