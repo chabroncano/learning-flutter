@@ -81,7 +81,7 @@ It will work only if AA <= BB -2 and CC >= DD
 
 The easiest explanation is that stateless can never change while stateful widgets can. Basically if your page wanted to show an image (See Commit ), then a Stateless widget is a good choice. However, if something is changing like a dice app (See Commit e75a1eacdece3a802ce480fc2a5a1d2c67062c09), then use the StatefulWidget.
 
-There's one more thing you have to know, if you want to rebuild the whole widget you need the `setState(() {})` method. See commit e75a1eacdece3a802ce480fc2a5a1d2c67062c09 for more info.
+There's one more thing you have to know, if you want to rebuild the whole widget you need the `setState(() {})` method.
 
 --
 
@@ -111,8 +111,56 @@ and the curly braces make this function interesting. You can call this function 
 
 If you do item 4, make sure you handle nullables properly.
 
+## Private methods and data
+
+If you add `_` before its names denotes that the method/data is private.
+
 ## Objects
 
-Creating objects in dart still needs a constructor. I am not sure yet if there are other ways but this is the knowledge I've learned from the AppBrewery class so far. I will update this if ever I find something similar to Kotlin's data classes in Dart.
+A constructor is needed to create an instance of an object in Dart. You can do it in several ways:
 
-Please refer to user.dart for an example object class in Dart.
+```
+class User {
+  String name;
+  int age;
+
+  User(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+User user = User("Cha", 25);
+```
+
+or you can make it optional:
+
+```
+class User {
+  String name;
+  int age;
+
+  User({String name, int age}) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+User user = User(name: "Cha", age: 25);
+User user = User(age: 25, name: "Cha");
+User user = User(name: "Cha");
+User user = User(age: 25);
+```
+
+but be careful with optionals, always check out for null.
+
+You can also do this:
+
+```
+class User {
+  String name;
+  int age;
+
+  User({this.name, this.age});
+}
+```
